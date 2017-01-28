@@ -11,8 +11,8 @@ void test_bessel(nec_float r, nec_float i, nec_float j0r, nec_float j0i) {
      bessel( z, &j0, &j0p );
      
      nec_float eps = 1.0e-4;
-     REQUIRE((abs(j0.real() -  j0r) < eps));
-     REQUIRE((abs(j0.imag() -  j0i) < eps));
+     REQUIRE((std::abs(j0.real() -  j0r) < eps));
+     REQUIRE((std::abs(j0.imag() -  j0i) < eps));
 }
 
 TEST_CASE( "Bessel Functions", "[bessel]") {
