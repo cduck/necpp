@@ -717,10 +717,12 @@ void c_geometry::wire( int tag_id, int segment_count, nec_float xw1, nec_float y
   // of the first and last segment
   nec_3vector wire_start(xw1,yw1,zw1);
   nec_3vector wire_end(xw2,yw2,zw2);
-  
+
+  // Commented out to stop broken check for intersection
+  /*
   nec_3vector seg_midpoint(wire_start + (dx/2)*delz);
   nec_3vector end_seg_midpoint = wire_end - (dx*delz / 2);
-  /* Check to see whether any wires intersect with the segment_midpoint */
+  // Check to see whether any wires intersect with the segment_midpoint
   for (uint32_t i=0; i<m_wires.size(); i++)
   {
     nec_wire a = m_wires[i];
@@ -748,7 +750,8 @@ void c_geometry::wire( int tag_id, int segment_count, nec_float xw1, nec_float y
       throw nex;
     }
   }
-  
+  */
+
 
   radz= rad;
   nec_3vector xs1(xw1,yw1,zw1);
